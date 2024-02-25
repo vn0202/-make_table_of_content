@@ -7,7 +7,7 @@ Assume you are create post or article, this package provide you a generator that
 ## Install 
 
 ```php
-composer require vannghia/make_table_of_content
+composer require vannghia/make_table_of_content:dev-main
 ```
 
 ## Usage 
