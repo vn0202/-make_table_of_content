@@ -4,6 +4,12 @@ Create a Table Of Content  from H1->H6 tag in HTML string
 This package provide a simple way to build a Table-Of-Contents from HTML markups. 
 Assume you are create post or article, this package provide you a generator that help you build a Table Of Content automatically. 
 
+## Install 
+
+```php
+composer require vannghia/make_table_of_content
+```
+
 ## Usage 
 
 This package have one class with 2 method:
