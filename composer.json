@@ -1,0 +1,19 @@
+{
+    "name": "vannghia/make_table_of_content",
+    "description": "Make table of content (TOC) from content of document",
+    "require": {
+        "symfony/dom-crawler": "^6.4",
+        "symfony/css-selector": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vannghia\\MakeTableOfContent\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "vn0202",
+            "email": "nghiavuxp0202@gmail.com"
+        }
+    ]
+}
