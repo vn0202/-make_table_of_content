@@ -63,17 +63,29 @@ class GenerateTOC
                     }
 
                 } elseif ($prevLevel > $currentLevel) {
-                    while ($parent->level > $currentLevel) {
+                    while ($parent && $parent->level >= $currentLevel) {
                         $parent = $parent->parent;
                     }
-                    $prev = $prev = new \stdClass();
-                    $prev->tagName = $node->nodeName();
-                    $prev->text = $node->text();
-                    $prev->id = $node->attr('id');
-                    $prev->level = $level;
-                    $prev->child = [];
-                    $prev->parent = $parent;
-                    $parent->child[] = $prev;
+                    if (!$parent) {
+                        $prev = new \stdClass();
+                        $prev->tagName = $node->nodeName();
+                        $prev->text = $node->text();
+                        $prev->id = $node->attr('id');
+                        $prev->level = $level;
+                        $prev->parent = null;
+                        $prev->child = [];
+                        array_push($menu, $prev);
+                        $prev = $menu[count($menu) - 1];
+                    } else {
+                        $prev = new \stdClass();
+                        $prev->tagName = $node->nodeName();
+                        $prev->text = $node->text();
+                        $prev->id = $node->attr('id');
+                        $prev->level = $level;
+                        $prev->child = [];
+                        $prev->parent = $parent;
+                        $parent->child[] = $prev;
+                    }
 
                 }
             }
